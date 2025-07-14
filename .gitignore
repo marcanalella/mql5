@@ -1,0 +1,6 @@
+**/*.ex5
+Files/
+Logs/
+Images/
+**/*.DS_Store
+Profiles/
