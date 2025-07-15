@@ -1388,7 +1388,7 @@ double CTrade::CheckVolume(const string symbol,double volume,double price,ENUM_O
 //--- check
    if(order_type!=ORDER_TYPE_BUY && order_type!=ORDER_TYPE_SELL)
       return(0.0);
-   double free_margin=AccountInfoDouble(ACCOUNT_FREEMARGIN);
+   double free_margin=AccountInfoDouble(ACCOUNT_MARGIN_FREE);
    if(free_margin<=0.0)
       return(0.0);
 //--- clean

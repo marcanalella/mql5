@@ -1,0 +1,79 @@
+//+------------------------------------------------------------------+
+//|                                               my_first_trade.mq5 |
+//|                                  Copyright 2023, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2023, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+#include <dashboard.mqh>
+#include <variable_example.mqh>
+
+enum trade_types
+  {
+   BUY=0,
+   SELL=1
+  };
+
+string coder_name = "Jesus";
+
+input trade_types trade_to_make = SELL;
+input string dashboard_name = "NEW DASHBOARD NAME!";
+int dashboard_text_size = 9;
+int dashboard_feed_length = 35;
+
+input color header_colour = clrBlack;
+input color header_text_colour = clrGreen;
+input color dashboard_box_colour = clrWhite;
+input color text_colour = clrDarkBlue;
+
+string welcome_message1 = "THIS EA BELONGS TO "+coder_name;
+
+input double lots = 10.5;
+input double tp = 100;
+input double sl = 100;
+string pips_or_price = "pips";
+string trade_comment = coder_name;
+bool trading_allowed = true;
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+  {
+//---
+//  tp_pips = 200;
+//  sl_pips = 75;
+//   tp_pips = 100;
+   dashboard.init(dashboard_name,dashboard_text_size,dashboard_feed_length); // I am trying something here
+   dashboard.style(header_colour,header_text_colour,dashboard_box_colour,text_colour);
+   add_log(welcome_message1);
+
+
+   if(trade_to_make==BUY && trading_allowed==true)
+      open_buy(lots,tp,sl,pips_or_price,trade_comment);
+   if(trade_to_make==SELL && trading_allowed==true)
+      open_sell(lots,tp,sl,pips_or_price,trade_comment);
+
+
+//open_sell(lots,tp_pips,sl_pips,pips_or_price,trade_comment);
+//---
+   return(INIT_SUCCEEDED);
+  }
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+  {
+//---
+
+  }
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+  {
+//---
+
+  }
+//+------------------------------------------------------------------+
