@@ -6,8 +6,8 @@
 #property copyright "Copyright 2023, MetaQuotes Ltd."
 #property link      "https://www.mql5.com"
 #property version   "1.00"
-#include <ap_ma.mqh> MovingAverage ma;
-#include <dashboard.mqh>
+#include <LikeAPro/ma.mqh> MovingAverage ma;
+#include <LikeAPro/dashboard.mqh>
 
 input string emas = "10,20,30,40,50,75,81,99,110,35,200,300,225";
 //+------------------------------------------------------------------+
@@ -47,8 +47,8 @@ void OnTick()
 //---
 if(ma_new_candle_check()){
 
-if(ma.is_bullish())v_line(TimeCurrent(),clrGreen);
-if(ma.is_bearish())v_line(TimeCurrent(),clrRed);
+if(ma.is_bullish())v_line((string)TimeCurrent(),clrGreen);
+if(ma.is_bearish())v_line((string)TimeCurrent(),clrRed);
 
 }
   }

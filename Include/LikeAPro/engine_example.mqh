@@ -1,7 +1,7 @@
-#include <ap_trade.mqh>
-#include <ap_candle.mqh>
-#include <dashboard.mqh>
-#include <ap_atr.mqh>
+#include <LikeAPro/trade.mqh>
+#include <LikeAPro/candle.mqh>
+#include <LikeAPro/dashboard.mqh>
+#include <LikeAPro/atr.mqh>
 
 //+------------------------------------------------------------------+
 //|                                                                  |

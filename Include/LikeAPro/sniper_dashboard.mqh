@@ -5,8 +5,8 @@
 //+------------------------------------------------------------------+
 #property copyright "Copyright 2022, MetaQuotes Ltd."
 #property link      "https://www.mql5.com"
-#include <shapes.mqh>
-#include <trade_sequence.mqh>
+#include <LikeAPro/shapes.mqh>
+#include <LikeAPro/trade_sequence.mqh>
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
@@ -191,16 +191,16 @@ void Dashboard::populate_sequences()
       string closed_trade_text = "Closed Trades: "+sequence[i].stats.trades.closed.buys_and_sells.number;
       open_trade_text +="    "+closed_trade_text;
 
-      rectangle("sequence_"+i,x,y,w,h,CORNER_LEFT_UPPER,BORDER_FLAT,STYLE_SOLID,1,component_colour);
+      rectangle("sequence_"+(string)i,x,y,w,h,CORNER_LEFT_UPPER,BORDER_FLAT,STYLE_SOLID,1,component_colour);
 
       TextSetFont(component_data_font,component_data_font_size);
       uint _w,_h;
       TextGetSize(open_time_text,_w,_h);
 
 
-      label("open_time_"+i,x+overview_panel_x_buffer,y,CORNER_LEFT_UPPER,open_time_text,component_data_font_size,component_data_text_colour,component_data_font);
-      label("open_trades_"+i,x+overview_panel_x_buffer+(_w*2),y,CORNER_LEFT_UPPER,open_trade_text,component_data_font_size,component_data_text_colour,component_data_font);
-      label("open_cash_"+i,x+overview_panel_x_buffer,y+(2*component_text_y_buffer)+_h,CORNER_LEFT_UPPER,open_pnl_cash,component_data_font_size,component_data_text_colour,component_data_font);
+      label("open_time_"+(string)i,x+overview_panel_x_buffer,y,CORNER_LEFT_UPPER,open_time_text,component_data_font_size,component_data_text_colour,component_data_font);
+      label("open_trades_"+(string)i,x+overview_panel_x_buffer+(_w*2),y,CORNER_LEFT_UPPER,open_trade_text,component_data_font_size,component_data_text_colour,component_data_font);
+      label("open_cash_"+(string)i,x+overview_panel_x_buffer,y+(2*component_text_y_buffer)+_h,CORNER_LEFT_UPPER,open_pnl_cash,component_data_font_size,component_data_text_colour,component_data_font);
 
       y+=(component_height+component_buffer_y);
 
@@ -216,15 +216,15 @@ void Dashboard::update_sequences()
      {
       double open_pnl = sequence[i].stats.trades.open.buys_and_sells.pnl_cash;
       string open_pnl_cash = DoubleToString(open_pnl,2)+AccountInfoString(ACCOUNT_CURRENCY);
-      string open_trade_text = "Open Trades: "+sequence[i].stats.trades.open.buys_and_sells.number;
-      string closed_trade_text = "Closed Trades: "+sequence[i].stats.trades.closed.buys_and_sells.number;
+      string open_trade_text = "Open Trades: "+(string) sequence[i].stats.trades.open.buys_and_sells.number;
+      string closed_trade_text = "Closed Trades: "+(string) sequence[i].stats.trades.closed.buys_and_sells.number;
       open_trade_text +="    "+closed_trade_text;
       color pnl_colour = component_pnl_winning_colour;
       if(open_pnl<0)
          pnl_colour = component_pnl_losing_colour;
-      ObjectSetString(0,"open_trades_"+i,OBJPROP_TEXT,open_trade_text);
-      ObjectSetString(0,"open_cash_"+i,OBJPROP_TEXT,open_pnl_cash);
-      ObjectSetInteger(0,"open_cash_"+i,OBJPROP_COLOR,pnl_colour);
+      ObjectSetString(0,"open_trades_"+ (string)i,OBJPROP_TEXT,open_trade_text);
+      ObjectSetString(0,"open_cash_"+ (string)i,OBJPROP_TEXT,open_pnl_cash);
+      ObjectSetInteger(0,"open_cash_"+ (string)i,OBJPROP_COLOR,pnl_colour);
      }
   }
 //+------------------------------------------------------------------+
@@ -234,10 +234,10 @@ void Dashboard::delete_sequences()
   {
    for(int i=0; i<ArraySize(sequence); i++)
      {
-      ObjectDelete(0,"sequence_"+i);
-      ObjectDelete(0,"open_time_"+i);
-      ObjectDelete(0,"open_trades_"+i);
-      ObjectDelete(0,"open_cash_"+i);
+      ObjectDelete(0,"sequence_"+(string)i);
+      ObjectDelete(0,"open_time_"+(string)i);
+      ObjectDelete(0,"open_trades_"+(string)i);
+      ObjectDelete(0,"open_cash_"+(string)i);
      }
 
   }

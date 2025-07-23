@@ -5,8 +5,8 @@
 //+------------------------------------------------------------------+
 #property copyright "Copyright 2022, MetaQuotes Ltd."
 #property link      "https://www.mql5.com"
-#include <ap_trade.mqh>
-#include <ap_stats.mqh>
+#include <LikeAPro/trade.mqh>
+#include <LikeAPro/stats.mqh>
 
 //+------------------------------------------------------------------+
 //|                                                                  |

@@ -7,7 +7,7 @@
 #property link      "https://www.mql5.com"
 #property version   "1.00"
 
-#include <dashboard.mqh>
+#include <LikeAPro/dashboard.mqh>
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |

@@ -6,10 +6,10 @@
 #property copyright "Copyright 2022, MetaQuotes Ltd."
 #property link      "https://www.mql5.com"
 #property version   "1.00"
-#include <shapes.mqh>
-#include <ap_trade.mqh>
-#include <ap_stats.mqh>
-#include <sniper_dashboard.mqh>
+#include <LikeAPro/shapes.mqh>
+#include <LikeAPro/trade.mqh>
+#include <LikeAPro/stats.mqh>
+#include <LikeAPro/sniper_dashboard.mqh>
 
 string EA_NAME = "New Robot";
 int EA_TITLE_FONT_SIZE=14;
@@ -86,9 +86,9 @@ int OnInit()
 
    );
 
-   new_sqeuence(magic_number,magic_number,1,5);
-   new_sqeuence(magic_number+1,magic_number+1,0,5);
-   new_sqeuence(magic_number+2,magic_number+2,1,5);
+   new_sqeuence(magic_number,(string)magic_number,1,5);
+   new_sqeuence(magic_number+1,(string)magic_number+1,0,5);
+   new_sqeuence(magic_number+2,(string)magic_number+2,1,5);
    D.populate_sequences();
 //---
    return(INIT_SUCCEEDED);

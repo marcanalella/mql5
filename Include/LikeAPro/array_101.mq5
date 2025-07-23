@@ -6,7 +6,7 @@
 #property copyright "Copyright 2023, MetaQuotes Ltd."
 #property link      "https://www.mql5.com"
 #property version   "1.00"
-#include <dashboard.mqh>
+#include <LikeAPro/dashboard.mqh>
 
 string weekdays[7];
 string data[];
@@ -57,25 +57,25 @@ int OnInit()
    set_weekdays();
    set_colours();
 
- add_log("Array size "+ArraySize(data));
- for(int i=0; i<100; i++)add_to_data("Piece of data "+i);
+ add_log("Array size "+(string)ArraySize(data));
+ for(int i=0; i<100; i++)add_to_data("Piece of data "+(string)i);
 
    for(int i=0; i<ArraySize(weekdays); i++)
      {
-      add_log("Weekday "+i+" is "+weekdays[i]);
+      add_log("Weekday "+(string)i+" is "+weekdays[i]);
      }
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
-  add_log(choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
+  add_log((string)choose_colour());
 
 
 //---

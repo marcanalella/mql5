@@ -6,7 +6,7 @@
 #property copyright "Copyright 2023, MetaQuotes Ltd."
 #property link      "https://www.mql5.com"
 #property version   "1.00"
-#include <dashboard.mqh>
+#include <LikeAPro/dashboard.mqh>
 
 int number = 1;
 string text = "hello";
@@ -73,7 +73,7 @@ void OnTick()
   {
 //---
    if(is_us_session()){
-   v_line(TimeCurrent(),clrRed,true);
+   v_line((string)TimeCurrent(),clrRed,true);
    }
 
   }

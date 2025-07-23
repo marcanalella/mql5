@@ -13,8 +13,8 @@
 //+---------------------------------------------------------------------------------------------------------+
 
 
-#include <ap_trade.mqh>
-#include  <shapes.mqh>
+#include <LikeAPro/trade.mqh>
+#include  <LikeAPro/shapes.mqh>
 
 enum trailing_stop_type
   {
