@@ -7,10 +7,10 @@
 #property link      "https://mariocanalella.netlify.app"
 #property version   "1.01"
 
-#include <AlgoPro/dashboard.mqh>
-#include <AlgoPro/ap_trade.mqh>
-#include <AlgoPro/shapes.mqh>
-#include <AlgoPro/ap_errors.mqh>
+#include <LikeAPro/dashboard.mqh>
+#include <LikeAPro/trade.mqh>
+#include <LikeAPro/shapes.mqh>
+#include <LikeAPro/errors.mqh>
 //+------------------------------------------------------------------+
 //| exit Mode ENUM                                                   |
 //+------------------------------------------------------------------+
